@@ -1,5 +1,5 @@
 {
-  "name": "travel2",
+  "name": "rails2",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",

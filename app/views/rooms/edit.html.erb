@@ -1,0 +1,55 @@
+<div class= container> 
+  <% if @room.errors.any? %>
+    <%= @room.errors.full_messages.each do |message|%>
+    <% end %>
+  <% end %>
+
+  <div class="mb-5"> 
+    <h1>施設情報編集</h1>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <%= form_with model: @room, url: room_path(@room),local: true do |f| %>
+        <div class="mb-5">
+          <div class="row">
+            <%= f.label :roomname, "施設名", class:"col-md-4" %>
+            <%= f.text_field :roomname,class:"col-md-5" %>
+          </div>
+        </div>
+        <div class="mb-5">
+          <div class="row">
+            <%= f.label :detail,"施設詳細", class:"col-md-4"%>
+            <%= f.text_area :detail, class:"col-md-5" %>
+          </div>
+        </div>
+        <div class="mb-5">
+          <div class="row">
+            <%= f.label :price, "価格", class:"col-md-4" %>
+            <%= f.text_field :price, class:"col-md-5" %>
+          </div>
+        </div>
+        
+        <div class="mb-5">
+          <div class="row">
+            <%= f.label :address, "住所", class:"col-md-4" %>
+            <%= f.text_field :address, class:"col-md-5" %>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <div class="row">
+            <%= f.label :image, "施設画像", class:"col-md-4" %>
+            <%= f.file_field :image %>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit('保存', class:'btn btn-primary mt-3 col-md-9')%>
+        </div>
+      <% end %>
+
+      <%= link_to'キャンセル',:back, class:"btn btn-outline-dark col-md-9" %>
+    </div>
+  </section>
+</div>

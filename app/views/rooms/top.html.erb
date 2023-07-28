@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="text-center mt-5 mb-5">
+    <%= search_form_for @q,url: rooms_path do |f| %>
+      <%= f.search_field :roomname_or_detail_or_address_cont,placeholder:"エリア検索"%>
+      <%= f.submit '検索'%>
+    <% end %>
+  </div>
+  <div class="link_search">
+    <h2 class="">おすすめのエリア</h2>
+    <div class="form-inline">
+      <%= link_to ({controller: "rooms", action: "index",q:{address_cont:"東京"}}) do%>
+        <p class="link_tab tokyo" >東京</p>
+      <% end %>
+      <%= link_to ({controller: "rooms", action: "index",q:{address_cont:"大阪"}}) do%>
+        <p class="link_tab">大阪</p>
+      <% end %>
+    </div>
+    <div class="form-inline">
+      <%= link_to ({controller: "rooms", action: "index",q:{address_cont:"京都"}}) do%>
+        <p class="link_tab  kyoto">京都</p>
+      <% end %>
+      <div class="form-inline">
+      <%= link_to ({controller: "rooms", action: "index",q:{address_cont:"札幌"}}) do%>
+        <p class="link_tab">札幌</p>
+      <% end %>
+    </div>
+  </div>
+</div>

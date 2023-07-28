@@ -1,0 +1,66 @@
+<div class="container-fuluid"> 
+  <div class="container" >
+    <div class="mt-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>施設名</p>
+          </div>
+          <div class="col-md-5">
+            <%= @reservation.room.roomname %>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>開始日</p>
+          </div>
+          <div class="col-md-5">
+            <%= @reservation.check_in %>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>終了日</p>
+          </div>
+          <div class="col-md-5">
+            <%= @reservation.check_out %>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>人数</p>
+          </div>
+          <div class="col-md-5">
+            <%= @reservation.number %>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="row">
+          <div class="col-md-3">
+            <p>支払い金額</p>
+          </div>
+          <div class="col-md-5">
+            <p>¥<%= @reservation.total %></p>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <%= form_with(model:@reservation, method: :post, url: reservations_path) do |f|%>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :room_id %>
+    <%= f.hidden_field :check_in %>
+    <%= f.hidden_field :check_out %>
+    <%= f.hidden_field :number %>
+    <%= f.hidden_field :price %>
+    <%= f.submit '登録する', class:'btn-warning mt-3 col-md-9'%>
+  <% end %>
+
+  <%= link_to "Back", :back,class:"btn btn-outline-dark  mt-3 col-md-9" %>
+</div>

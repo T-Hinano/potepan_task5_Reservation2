@@ -1,0 +1,32 @@
+<div class="container-fuluid"> 
+  <div class="container" >
+    <div class="mt-4">
+      <div class="row">
+          <%= link_to "プロフィール", user_path(@user),class:"col-md-6 lead"%>
+          <p class="col-md-6 lead border-bottom">アカウント</p>
+      </div>
+    </div>
+    
+    <div class="mt-5">
+      <div class="row">
+        <div class="col-md-3">
+          <p>e-mail</p>
+        </div>
+        <div class="col-md-5">
+          <%= @user.email%>
+        </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <div class="row">
+        <div class="col-md-3">
+          <p>パスワード</p>
+        </div>
+        <div class="col-md-5">
+          <p>******</p>
+        </div>
+      </div>
+    </div>
+    <%= link_to '編集', edit_user_registration_path, class:"btn btn-primary" %>
+  </div>
+</div>

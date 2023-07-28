@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  room_id: 1
+  check_in: 2023-05-07
+  check_out: 2023-05-07
+  number: 1
+  image: MyString
+  image_cache: MyString
+  roomname: MyString
+  price: 1
+  detail: MyString
+  address: MyString
+
+two:
+  user_id: 1
+  room_id: 1
+  check_in: 2023-05-07
+  check_out: 2023-05-07
+  number: 1
+  image: MyString
+  image_cache: MyString
+  roomname: MyString
+  price: 1
+  detail: MyString
+  address: MyString

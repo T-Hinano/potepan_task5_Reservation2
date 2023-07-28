@@ -1,0 +1,38 @@
+<%= form_with model: @reservation do |f| %>
+  <div class="container"> 
+    <div class="mb-5"> 
+      <h1>施設予約</h1>
+      
+      <%= f.hidden_field :room_id, value: @room %>
+    </div>
+      <div class="mb-5">
+        <div class="row">
+          <%= f.label :check_in, class:"mr-3" %>
+          <%= f.text_field :check_in,class:"ml-3"%>
+          
+        </div>
+      </div>
+
+      <div class="mb-5">
+        <div class="row">
+          <%= f.label :check_out,class:"mr-3"%>
+          <%= f.text_field :check_out %>
+        </div>
+      </div>
+
+      <div class="mb-5">
+        <div class="row">
+          <%= f.label :number,class:"mr-5"%><br />
+          <%= f.text_field :number %>
+        </div>
+      </div>
+
+      
+
+      <div class="actions">
+        <%= f.submit "保存", class: 'btn btn-primary col-md-9' %>
+      </div>
+  </div>
+<% end %>
+
+<%= link_to "Back", :back,class:"btn btn-outline-dark  mt-3 col-md-9" %>

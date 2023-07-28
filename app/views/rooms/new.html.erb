@@ -1,0 +1,53 @@
+<%= form_with model: @room do |f| %>
+  <div class="container">
+    <% if @room.errors.any? %>
+        <%= @room.errors.full_messages.each do |message|%>
+        <% end %>
+    <% end %>
+
+    <div class="mb-5"> 
+      <h2>新規登録</h2>
+    </div>
+    
+    <div class="mb-5">
+      <div class="row">
+        <%= f.label :roomname,"施設名", class:"mr-3" %>
+        <%= f.text_field :roomname,class:"ml-3"%>
+      </div>
+    </div>
+
+    <div class="mb-5">
+      <div class="row">
+        <%= f.label :detail,"施設詳細",class:"mr-3"%>
+        <%= f.text_area :detail %>
+      </div>
+    </div>
+
+    <div class="mb-5">
+      <div class="row">
+        <%= f.label :price,"料金",class:"mr-5"%><br />
+        <%= f.text_field :price %>
+      </div>
+    </div>
+    
+    <div class="mb-5">
+      <div class="row">
+        <%= f.label :address,"住所",class:"mr-5"%> 
+        <%= f.text_field :address %>
+      </div>
+    </div>
+
+    <div class="mb-5">
+      <div class="row">
+        <%= f.label :image,"画像",class:"mr-5"%>
+        <%= f.file_field :image %>
+      </div>
+    </div>
+      
+    <div class="actions">
+      <%= f.submit "保存", class: 'btn btn-primary col-md-9' %>
+    </div>
+    
+    <%= link_to "Back", :back,class:"btn btn-outline-dark  mt-3 col-md-9" %>
+  </div>
+<% end %>

@@ -1,0 +1,36 @@
+<head>
+    <div class="search_form center-block">
+      <%= form_with url: search_rooms_path, method: :get, local: :true do |f|  %>
+        <%= f.text_field :area, placeholder:"エリア検索", value: @aria %>
+        <%= f.text_field :keyword, placeholder:"キーワード検索", value: @keyword %>
+        <%= f.submit "検索", class: "btn"%>
+      <% end %>
+    </div>
+</head>
+<body>
+  <% @rooms.each do |room|%> 
+    <main>
+      <div class="album py-4 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col-5">
+              <div class="card shadow-sm">
+                <%= image_tag room.image.to_s %>
+                <div class="card-body">
+                  <div class="card-text">
+                    <p><%= room.roomname %></p>
+                    <p><%= room.address %></p>
+                    <p><%= room.detail %></p>  
+                    <p>¥<%= room.price %>/日</p>
+                    <p><%= room.created_at.to_s(:creteatime_jp) %></p>
+                    <%= link_to "詳細はこちら", room,class:"btn btn-outline-dark" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  <% end %>
+</body>
